@@ -2812,7 +2812,7 @@ label, label + * {
 .return-request-page .button-1 {
 	min-width: 140px;
 	border: none;
-	background-color: #4ab2f1;
+	background-color: #20408c;
     padding: 10px 30px;
 	text-align: center;
 	font-size: 15px;
@@ -2825,7 +2825,7 @@ label, label + * {
 .password-recovery-page .button-1:hover,
 .account-page .button-1:hover,
 .return-request-page .button-1:hover {
-	background-color: #248ece;
+	background-color: #cd2831;
 }
 .return-request-page h1 a {
     color: #4ab2f1;
