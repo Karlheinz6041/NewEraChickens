@@ -1103,6 +1103,10 @@
       <Project>{75FD4163-333C-4DD5-854D-2EF294E45D94}</Project>
       <Name>Nop.Web.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="Administration\Nop.Admin.csproj">
+      <Project>{152c761a-dd2e-4c1f-af89-dfb2547a3bca}</Project>
+      <Name>Nop.Admin</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Themes\DefaultClean\theme.config" />
@@ -1314,6 +1318,16 @@
   </Target> -->
   <!-- And here we place our custom logic (below)
   </Target> -->
+  <Target Name="RenameDebugSettingsFile" Condition=" '$(Configuration)' == 'Debug' ">  
+    <Copy SourceFiles="$(ProjectDir)App_Data\Settings.Debug.txt" DestinationFiles="$(ProjectDir)App_Data\Settings.txt" />
+  </Target>
+  <Target Name="RenameReleaseSettingsFile" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">  
+    <Copy SourceFiles="$(ProjectDir)App_Data\Settings.Release.txt" DestinationFiles="$(ProjectDir)App_Data\Settings.txt" />
+  </Target>  
+  <Target Name="BeforeBuild">
+    <CallTarget Targets="RenameDebugSettingsFile" />
+    <CallTarget Targets="RenameReleaseSettingsFile" />
+  </Target>
   <Target Name="ExcludeRootBinariesDeployment">
     <ItemGroup>
       <RootBinFiles Include="bin\*">
@@ -1333,7 +1347,6 @@
 		Administration\bin\**;
 		Administration\db_backups\*.bak;
 		App_Data\InstalledPlugins.txt;
-		App_Data\Settings.txt;
 		App_Data\Nop.Db.sdf;
 		bin\Nop.Admin.dll.config;
 		bin\Nop.Web.dll.config;

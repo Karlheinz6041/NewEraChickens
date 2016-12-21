@@ -1,0 +1,2 @@
+DataProvider: sqlserver
+DataConnectionString: Data Source=newerachickens.database.windows.net,1433;Initial Catalog=NewEraChickens;Integrated Security=False;Persist Security Info=False;User ID=karlheinz.schnelle;Password=Lethaeho@7
