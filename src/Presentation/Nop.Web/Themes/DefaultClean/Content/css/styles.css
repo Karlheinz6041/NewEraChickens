@@ -453,7 +453,7 @@ label, label + * {
 	white-space: nowrap;
     color: #444;
 }
-.cart td.subtotal .discount {
+.cart td.subtotal .discount, .cart td.subtotal .discount-additional-info {
     font-style: italic;
     color: #4ab2f1;
 }
@@ -1456,6 +1456,9 @@ label, label + * {
 .item-box .product-title a:hover {
 	color: #248ece;
 }
+.item-box .sku {
+    margin: -3px 0px 15px;
+}
 .item-box .product-rating-box {
     display: inline-block;
 	margin: 0 0 10px;
@@ -2125,6 +2128,12 @@ label, label + * {
 	width: 280px;
 	text-align: center;
 	color: #444;
+}
+
+.attributes .qty-box {
+	width: 48px;
+    height: 32px;
+    text-align: center;
 }
 
 .ui-datepicker {
@@ -2818,6 +2827,9 @@ label, label + * {
 .return-request-page .button-1:hover {
 	background-color: #248ece;
 }
+.return-request-page h1 a {
+    color: #4ab2f1;
+}
 .registration-page .message-error,
 .login-page .message-error,
 .account-page .message-error {
@@ -2830,7 +2842,7 @@ label, label + * {
 	font-size: 16px;
 	color: #4cb17c;
 }
-
+.customer-info-page .readonly-username,
 .customer-info-page .vat-status {
     margin: 0 5px;
     font-size: 14px;
@@ -2903,6 +2915,11 @@ label, label + * {
 	margin: 0 0 50px;
 	overflow: hidden;
 	text-align: center;
+}
+.external-authentication .title {
+	margin: 0 0 15px;
+	font-size: 20px;
+	color: #444;
 }
 .external-authentication .buttons {
     margin: 0 0 30px;
@@ -5271,7 +5288,7 @@ pre {
     height: 40px;
 }
 .item-box .product-title {
-    min-height: 42px;
+    min-height: 21px;
     margin: 0 0 5px;
 }
 

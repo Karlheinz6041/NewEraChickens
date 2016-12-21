@@ -104,9 +104,11 @@ namespace Nop.Services.Customers
             if (!isValid)
                 return CustomerLoginResults.WrongPassword;
 
-            //save last login date
+            //update login details
+            customer.RequireReLogin = false;
             customer.LastLoginDateUtc = DateTime.UtcNow;
             _customerService.UpdateCustomer(customer);
+
             return CustomerLoginResults.Successful;
         }
 
@@ -379,9 +381,6 @@ namespace Nop.Services.Customers
 
             if (!_customerSettings.UsernamesEnabled)
                 throw new NopException("Usernames are disabled");
-
-            if (!_customerSettings.AllowUsersToChangeUsernames)
-                throw new NopException("Changing usernames is not allowed");
 
             newUsername = newUsername.Trim();
 
