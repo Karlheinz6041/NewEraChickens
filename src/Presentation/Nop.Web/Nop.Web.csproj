@@ -15,7 +15,7 @@
     <AssemblyName>Nop.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -626,6 +626,11 @@
     <Content Include="Content\samples\product_WomenTShirt.jpg" />
     <Content Include="Content\samples\p_attribute_print_1.jpg" />
     <Content Include="Content\samples\p_attribute_print_2.jpg" />
+    <Content Include="Plugins\Widgets.StoreLocator\Content\style.css" />
+    <Content Include="Plugins\Widgets.StoreLocator\Description.txt" />
+    <Content Include="Plugins\Widgets.StoreLocator\logo.jpg" />
+    <Content Include="Plugins\Widgets.StoreLocator\Nop.Plugin.Widgets.StoreLocator.dll" />
+    <Content Include="Plugins\Widgets.StoreLocator\Nop.Plugin.Widgets.StoreLocator.pdb" />
     <Content Include="Scripts\fineuploader\edit.gif" />
     <Content Include="Scripts\fineuploader\fineuploader-4.2.2.css" />
     <Content Include="Scripts\fineuploader\fineuploader-4.2.2.min.css" />
@@ -640,6 +645,12 @@
     <Content Include="Content\samples\product_IfYouWait_1.zip" />
     <Content Include="Content\samples\product_NightVision_1.zip" />
     <Content Include="Content\samples\product_ScienceAndFaith_1.zip" />
+    <Content Include="Plugins\Widgets.StoreLocator\Views\StoreLocators\AddPopup.cshtml" />
+    <Content Include="Plugins\Widgets.StoreLocator\Views\StoreLocators\Configure.cshtml" />
+    <Content Include="Plugins\Widgets.StoreLocator\Views\StoreLocators\EditPopup.cshtml" />
+    <Content Include="Plugins\Widgets.StoreLocator\Views\StoreLocators\PublicInfo.cshtml" />
+    <Content Include="Plugins\Widgets.StoreLocator\Views\StoreLocators\_CreateOrUpdate.cshtml" />
+    <Content Include="Plugins\Widgets.StoreLocator\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fineuploader\iframe.xss.response-4.2.2.js" />
     <Content Include="Scripts\fineuploader\jquery.fineuploader-4.2.2.js" />
@@ -1318,12 +1329,12 @@
   </Target> -->
   <!-- And here we place our custom logic (below)
   </Target> -->
-  <Target Name="RenameDebugSettingsFile" Condition=" '$(Configuration)' == 'Debug' ">  
+  <Target Name="RenameDebugSettingsFile" Condition=" '$(Configuration)' == 'Debug' ">
     <Copy SourceFiles="$(ProjectDir)App_Data\Settings.Debug.txt" DestinationFiles="$(ProjectDir)App_Data\Settings.txt" />
   </Target>
-  <Target Name="RenameReleaseSettingsFile" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">  
+  <Target Name="RenameReleaseSettingsFile" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Copy SourceFiles="$(ProjectDir)App_Data\Settings.Release.txt" DestinationFiles="$(ProjectDir)App_Data\Settings.txt" />
-  </Target>  
+  </Target>
   <Target Name="BeforeBuild">
     <CallTarget Targets="RenameDebugSettingsFile" />
     <CallTarget Targets="RenameReleaseSettingsFile" />
