@@ -15,7 +15,7 @@
     <AssemblyName>Nop.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -626,6 +626,34 @@
     <Content Include="Content\samples\product_WomenTShirt.jpg" />
     <Content Include="Content\samples\p_attribute_print_1.jpg" />
     <Content Include="Content\samples\p_attribute_print_2.jpg" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\nivo-slider.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\sample-images\banner1.jpg" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\sample-images\banner2.jpg" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\bar\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\bar\bar.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\bar\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\bar\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\custom\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\custom\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\custom\custom.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\custom\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\dark\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\dark\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\dark\dark.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\dark\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\default\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\default\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\default\default.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\default\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\light\arrows.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\light\bullets.png" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\light\light.css" />
+    <Content Include="Plugins\Widgets.NivoSlider\Content\nivoslider\themes\light\loading.gif" />
+    <Content Include="Plugins\Widgets.NivoSlider\Description.txt" />
+    <Content Include="Plugins\Widgets.NivoSlider\logo.jpg" />
+    <Content Include="Plugins\Widgets.NivoSlider\Nop.Plugin.Widgets.NivoSlider.dll" />
+    <Content Include="Plugins\Widgets.NivoSlider\Nop.Plugin.Widgets.NivoSlider.pdb" />
+    <Content Include="Plugins\Widgets.NivoSlider\Scripts\jquery.nivo.slider.js" />
     <Content Include="Plugins\Widgets.StoreLocator\Content\style.css" />
     <Content Include="Plugins\Widgets.StoreLocator\Description.txt" />
     <Content Include="Plugins\Widgets.StoreLocator\logo.jpg" />
@@ -645,6 +673,10 @@
     <Content Include="Content\samples\product_IfYouWait_1.zip" />
     <Content Include="Content\samples\product_NightVision_1.zip" />
     <Content Include="Content\samples\product_ScienceAndFaith_1.zip" />
+    <Content Include="Plugins\Widgets.NivoSlider\Nop.Plugin.Widgets.NivoSlider.dll.config" />
+    <Content Include="Plugins\Widgets.NivoSlider\Views\Configure.cshtml" />
+    <Content Include="Plugins\Widgets.NivoSlider\Views\PublicInfo.cshtml" />
+    <Content Include="Plugins\Widgets.NivoSlider\web.config" />
     <Content Include="Plugins\Widgets.StoreLocator\Views\StoreLocators\AddPopup.cshtml" />
     <Content Include="Plugins\Widgets.StoreLocator\Views\StoreLocators\Configure.cshtml" />
     <Content Include="Plugins\Widgets.StoreLocator\Views\StoreLocators\EditPopup.cshtml" />
@@ -1096,6 +1128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Plugins\bin\" />
+    <Folder Include="Plugins\Widgets.NivoSlider\Views\WidgetsNivoSlider\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj">
@@ -1329,12 +1362,14 @@
   </Target> -->
   <!-- And here we place our custom logic (below)
   </Target> -->
-  <Target Name="RenameDebugSettingsFile" Condition=" '$(Configuration)' == 'Debug' ">
+  <Target Name="RenameDebugSettingsFile" Condition=" '$(Configuration)' == 'Debug' ">  
     <Copy SourceFiles="$(ProjectDir)App_Data\Settings.Debug.txt" DestinationFiles="$(ProjectDir)App_Data\Settings.txt" />
+    <Copy SourceFiles="$(ProjectDir)App_Data\InstalledPlugins.Debug.txt" DestinationFiles="$(ProjectDir)App_Data\InstalledPlugins.txt" />
   </Target>
-  <Target Name="RenameReleaseSettingsFile" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <Target Name="RenameReleaseSettingsFile" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">  
     <Copy SourceFiles="$(ProjectDir)App_Data\Settings.Release.txt" DestinationFiles="$(ProjectDir)App_Data\Settings.txt" />
-  </Target>
+    <Copy SourceFiles="$(ProjectDir)App_Data\InstalledPlugins.Release.txt" DestinationFiles="$(ProjectDir)App_Data\InstalledPlugins.txt" />
+  </Target>  
   <Target Name="BeforeBuild">
     <CallTarget Targets="RenameDebugSettingsFile" />
     <CallTarget Targets="RenameReleaseSettingsFile" />
@@ -1357,7 +1392,6 @@
 		**\*.csproj.user;
 		Administration\bin\**;
 		Administration\db_backups\*.bak;
-		App_Data\InstalledPlugins.txt;
 		App_Data\Nop.Db.sdf;
 		bin\Nop.Admin.dll.config;
 		bin\Nop.Web.dll.config;
