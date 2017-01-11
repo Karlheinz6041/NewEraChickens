@@ -164,7 +164,11 @@ src/Presentation/Nop.Web/Plugins/DiscountRules*
 src/Presentation/Nop.Web/Plugins/ExchangeRate*
 src/Presentation/Nop.Web/Plugins/ExternalAuth*
 src/Presentation/Nop.Web/Plugins/Feed*
-src/Presentation/Nop.Web/Plugins/Payments*
+src/Presentation/Nop.Web/Plugins/Payments.CheckMoneyOrder*
+src/Presentation/Nop.Web/Plugins/Payments.Manual*
+src/Presentation/Nop.Web/Plugins/Payments.PayPalDirect*
+src/Presentation/Nop.Web/Plugins/Payments.PayPalStandard*
+src/Presentation/Nop.Web/Plugins/Payments.PurchaseOrder*
 src/Presentation/Nop.Web/Plugins/Pickup*
 src/Presentation/Nop.Web/Plugins/PromotionFeed*
 src/Presentation/Nop.Web/Plugins/Shipping*
