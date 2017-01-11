@@ -331,6 +331,11 @@ namespace Nop.Plugin.Payments.PayFast
             get { return false; }
         }
 
+        public string PaymentMethodDescription
+        {
+            get { return "Pay with PayFast"; }
+        }
+
         #endregion
     }
 }
