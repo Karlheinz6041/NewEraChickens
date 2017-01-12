@@ -6221,7 +6221,6 @@ pre {
 
 .header-menu {
 	position: relative;
-	z-index: 5;
 	width: 980px;
 	margin: 0 auto 30px;
 	border-top: 1px solid #ddd;
