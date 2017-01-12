@@ -6,6 +6,7 @@ CurrencyExchange.ECB
 ExternalAuth.Facebook
 Payments.CheckMoneyOrder
 Payments.Manual
+Payments.PayFast
 Payments.PayPalDirect
 Payments.PayPalStandard
 Payments.PurchaseOrder
