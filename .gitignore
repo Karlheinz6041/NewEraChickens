@@ -171,7 +171,13 @@ src/Presentation/Nop.Web/Plugins/Payments.PayPalStandard*
 src/Presentation/Nop.Web/Plugins/Payments.PurchaseOrder*
 src/Presentation/Nop.Web/Plugins/Pickup*
 src/Presentation/Nop.Web/Plugins/PromotionFeed*
-src/Presentation/Nop.Web/Plugins/Shipping*
+src/Presentation/Nop.Web/Plugins/Shipping.AustraliaPost*
+src/Presentation/Nop.Web/Plugins/Shipping.ByWeight*
+src/Presentation/Nop.Web/Plugins/Shipping.CanadaPost*
+src/Presentation/Nop.Web/Plugins/Shipping.Fedex*
+src/Presentation/Nop.Web/Plugins/Shipping.FixedRateShipping*
+src/Presentation/Nop.Web/Plugins/Shipping.UPS*
+src/Presentation/Nop.Web/Plugins/Shipping.USPS*
 src/Presentation/Nop.Web/Plugins/Tax*
 src/Presentation/Nop.Web/Plugins/Widgets.GoogleAnalytics*
 src/Presentation/Nop.Web/Plugins/Widgets.StoreLocator*
