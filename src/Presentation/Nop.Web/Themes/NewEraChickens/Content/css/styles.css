@@ -99,7 +99,10 @@ textarea {
 	min-height: 150px;
 }
 #checkout_attribute_1 {
-	width: 100%
+	width: 100%;
+}
+.checkout-attributes {
+	width: 100%;
 }
 select {
 	min-width: 50px;
