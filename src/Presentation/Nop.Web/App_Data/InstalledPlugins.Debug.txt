@@ -4,6 +4,7 @@ DiscountRequirement.HasOneProduct
 DiscountRequirement.MustBeAssignedToCustomerRole
 CurrencyExchange.ECB
 ExternalAuth.Facebook
+Payments.CashOnDelivery
 Payments.CheckMoneyOrder
 Payments.Manual
 Payments.PayFast
