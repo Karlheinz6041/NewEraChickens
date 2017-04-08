@@ -1,3 +1,4 @@
+Payments.CashOnDelivery
 Payments.PayFast
 Shipping.FixedOrByWeight
 Widgets.NivoSlider
